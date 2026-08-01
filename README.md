@@ -36,7 +36,9 @@ The release data changes
 Shared release rules calculate READY or BLOCKED
         ↓
 The dashboard displays the updated decision
-
+```
+###Test and deployment flow
+```text
 Code is pushed to GitHub
         ↓
 GitHub Actions starts
