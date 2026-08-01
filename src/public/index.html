@@ -35,8 +35,8 @@
           </div>
           <h1>Is this release ready to ship?</h1>
           <p class="hero-subtitle">
-            This dashboard models a simple release decision. Fix the failed test and critical defect,
-            then watch the application recalculate whether deployment is safe.
+            This dashboard demonstrates a release decision. Go ahead and fix the failed test and critical defect,
+            then watch the application recalculate whether deployment is safe!
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#demo">Try the dashboard</a>
@@ -48,7 +48,7 @@
         <aside class="terminal" aria-label="Continuous integration summary">
           <div class="terminal-header">
             <span></span><span></span><span></span>
-            <strong>latest quality run</strong>
+            <strong>latest test run results</strong>
           </div>
           <div class="terminal-body">
             <p><span class="check">✓</span> Unit tests <strong>passed</strong></p>
@@ -64,7 +64,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">RELEASE CANDIDATE</p>
-            <h2 id="demo-title">Version 2.4.0</h2>
+            <h2 id="demo-title">2.4.1 Build:63512</h2>
           </div>
           <div id="status-pill" class="status-pill status-blocked" aria-live="polite">
             <span class="status-dot"></span>
@@ -94,15 +94,15 @@
 
             <div class="action-panel">
               <div class="action-copy">
-                <h3>Clear the remaining blockers</h3>
-                <p>Run the smoke tests and verify the critical bug fix to prepare this release for deployment.</p>
+                <h3>Complete the remaining release checks</h3>
+                <p>Run the smoke suite and confirm the critical bug has been resolved before deployment.</p>
               </div>
               <div class="actions" aria-label="Demo actions">
                 <button id="run-smoke" class="button button-primary" type="button">
                   <span aria-hidden="true">▶</span> Run smoke suite
                 </button>
                 <button id="resolve-bug" class="button button-dark" type="button">
-                  <span aria-hidden="true">✓</span> Resolve critical bug
+                  <span aria-hidden="true">✓</span> Confirm bug fix
                 </button>
                 <button id="reset" class="button button-quiet" type="button">Reset demo</button>
               </div>
@@ -143,7 +143,7 @@
         <div class="section-heading centered">
           <div>
             <p class="eyebrow">HOW THE PROJECT WORKS</p>
-            <h2 id="architecture-title">How the application is ran</h2>
+            <h2 id="architecture-title">How it works</h2>
             <p class="section-subtitle">
               The dashboard, API, and tests all use the same release logic. Unit tests check the rules directly, 
               API tests verify the server responses, and browser tests confirm the full user workflow.
