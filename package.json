@@ -2,7 +2,7 @@
   "name": "release-readiness-demo",
   "version": "2.0.0",
   "private": true,
-  "description": "A recruiter-first SDET portfolio project with a live GitHub Pages demo, REST API, Playwright automation, and CI/CD.",
+  "description": "Release-readiness dashboard with a Node.js REST API, Playwright automation, and GitHub Actions deployment.",
   "type": "module",
   "engines": {
     "node": ">=22"
