@@ -218,3 +218,25 @@ footer p { margin: 0; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+.flow-groups {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.flow-group {
+  display: grid;
+  gap: 1rem;
+}
+
+.flow-group h3 {
+  margin: 0;
+}
+
+.flow-group .flow {
+  margin-top: 0;
+}
+
+.flow-group .flow + .flow {
+  margin-top: 0.5rem;
+}
