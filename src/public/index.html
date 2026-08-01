@@ -35,8 +35,8 @@
           </div>
           <h1>Is this release ready to ship?</h1>
           <p class="hero-subtitle">
-            This dashboard demonstrates a release decision. Go ahead and fix the failed test and critical defect,
-            then watch the application recalculate whether deployment is safe!
+            This dashboard emulates a simple release-readiness workflow. Run the failed test again and confirm the critical defect has been resolved, 
+            then watch the application recalculate whether deployment is safe.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#demo">Try the dashboard</a>
@@ -64,7 +64,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">RELEASE CANDIDATE</p>
-            <h2 id="demo-title">2.4.1 Build:63512</h2>
+            <h2 id="demo-title">Version 2.4.0</h2>
           </div>
           <div id="status-pill" class="status-pill status-blocked" aria-live="polite">
             <span class="status-dot"></span>
@@ -178,16 +178,66 @@
           </article>
         </div>
 
-        <div class="flow" aria-label="Project architecture flow">
-          <div><strong>Browser</strong><span>Interactive dashboard</span></div>
-          <span class="flow-arrow">→</span>
-          <div><strong>Shared logic</strong><span>Release decision</span></div>
-          <span class="flow-arrow">→</span>
-          <div><strong>Node.js API</strong><span>State and validation</span></div>
-          <span class="flow-arrow">→</span>
-          <div><strong>Playwright</strong><span>Automated verification</span></div>
-        </div>
-      </section>
+<div class="flow-groups" aria-label="Project architecture">
+
+  <div class="flow-group">
+    <h3>Application</h3>
+
+    <div class="flow">
+      <div>
+        <strong>Browser dashboard</strong>
+        <span>Interactive interface</span>
+      </div>
+
+      <span class="flow-arrow">→</span>
+
+      <div>
+        <strong>Shared release logic</strong>
+        <span>Calculates READY or BLOCKED</span>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div>
+        <strong>Node.js API</strong>
+        <span>Release state and validation</span>
+      </div>
+
+      <span class="flow-arrow">→</span>
+
+      <div>
+        <strong>Shared release logic</strong>
+        <span>Uses the same decision rules</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-group">
+    <h3>Automation</h3>
+
+    <div class="flow">
+      <div>
+        <strong>Unit, API, and UI tests</strong>
+        <span>Verify each project layer</span>
+      </div>
+
+      <span class="flow-arrow">→</span>
+
+      <div>
+        <strong>GitHub Actions</strong>
+        <span>Runs the full test suite</span>
+      </div>
+
+      <span class="flow-arrow">→</span>
+
+      <div>
+        <strong>Report and deployment</strong>
+        <span>Published only after passing</span>
+      </div>
+    </div>
+  </div>
+
+</div>
 
       <section class="cta shell">
         <div>
