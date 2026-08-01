@@ -24,20 +24,28 @@ The dashboard begins with a release that is blocked by a failed smoke test and a
 
 ## How it works
 
+### Application flow
+
 ```text
-Browser dashboard
-       │
-       ▼
-Shared release rules ◄──── Node.js REST API
-       ▲                         ▲
-       │                         │
-       └──── Unit, API, and UI tests
-                         │
-                         ▼
-              GitHub Actions pipeline
-                         │
-                         ▼
-             GitHub Pages + test report
+User opens the dashboard
+        ↓
+User runs the smoke suite or resolves the critical bug
+        ↓
+The release data changes
+        ↓
+Shared release rules calculate READY or BLOCKED
+        ↓
+The dashboard displays the updated decision
+
+Code is pushed to GitHub
+        ↓
+GitHub Actions starts
+        ↓
+Unit, API, and browser tests run
+        ↓
+A Playwright test report is generated
+        ↓
+The live demo deploys only if the tests pass
 ```
 
 The browser demo and Node.js API both use `calculateReleaseSummary()` from `src/public/release-logic.js`. Keeping the release rules separate from the UI and server makes the behavior easier to test and avoids duplicating business logic.
