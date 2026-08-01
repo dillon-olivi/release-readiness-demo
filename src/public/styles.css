@@ -116,7 +116,7 @@ h1 { max-width: 720px; margin: 0; font-size: clamp(3.2rem, 7.5vw, 6.25rem); line
 .button-dark { color: #f3f6fb; background: #252c3d; border-color: #353e54; }
 .button-quiet { color: #aeb7c9; background: transparent; border-color: var(--line); }
 
-.terminal { overflow: hidden; border: 1px solid #2a3247; border-radius: 16px; background: rgba(12,15,23,0.92); box-shadow: 0 26px 80px rgba(0,0,0,0.32); transform: rotate(1.2deg); }
+.terminal { overflow: hidden; border: 1px solid #2a3247; border-radius: 16px; background: rgba(12,15,23,0.92); box-shadow: 0 26px 80px rgba(0,0,0,0.32); transform: rotate(0deg); }
 .terminal-header { min-height: 48px; padding: 0 16px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #22293a; background: #121722; }
 .terminal-header span { width: 9px; height: 9px; border-radius: 50%; background: #465069; }
 .terminal-header span:first-child { background: #ff6b78; }
@@ -217,6 +217,7 @@ footer p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+  
 }
 .flow-groups {
   display: grid;
@@ -240,3 +241,4 @@ footer p { margin: 0; }
 .flow-group .flow + .flow {
   margin-top: 0.5rem;
 }
+
