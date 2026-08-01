@@ -14,7 +14,7 @@ test('moves a release from blocked to ready through the critical workflow', asyn
   await expect(page.getByTestId('message')).toContainText('12/12');
   await expect(page.getByTestId('status')).toHaveText('BLOCKED');
 
-  await page.getByRole('button', { name: 'Resolve critical bug' }).click();
+  await page.getByRole('button', { name: 'Confirm bug fix' }).click();
   await expect(page.getByTestId('critical-bugs')).toHaveText('0');
   await expect(page.getByTestId('status')).toHaveText('READY');
   await expect(page.getByText('APPROVED TO DEPLOY')).toBeVisible();
