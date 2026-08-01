@@ -220,26 +220,30 @@ footer p { margin: 0; }
 }
 
 .flow-groups {
+  width: min(840px, 100%);
+  margin: 2.5rem auto 0;
   display: grid;
   gap: 2.5rem;
-  margin-top: 2.5rem;
 }
 
 .flow-group {
   display: grid;
   gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #293146;
+  border-radius: 15px;
+  background: #111621;
 }
 
 .flow-group h3 {
-  width: min(760px, 100%);
-  margin: 0 auto;
+  margin: 0;
 }
 
 .flow-group .flow {
-  width: min(760px, 100%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .flow-group .flow + .flow {
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
