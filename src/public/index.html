@@ -154,26 +154,26 @@
         <div class="skill-grid">
           <article>
             <span class="skill-number">01</span>
-            <h3>Release rules</h3>
-            <p>A reusable module calculates pass rate and determines whether every deployment requirement is met.</p>
+            <h3>Release decision</h3>
+            <p>Shared JavaScript logic checks the test results and critical bugs, then decides whether the release is ready to deploy.</p>
             <code>calculateReleaseSummary()</code>
           </article>
           <article>
             <span class="skill-number">02</span>
-            <h3>REST API</h3>
-            <p>The Node.js API returns the current release state, accept test results, validate input, and reset the demo.</p>
+            <h3>Server API</h3>
+            <p>The Node.js API returns the current release information, accepts updated test results, checks for invalid input, and resets the demo.</p>
             <code>GET /api/release</code>
           </article>
           <article>
             <span class="skill-number">03</span>
-            <h3>Automated tests</h3>
-            <p>Unit, API, and UI tests cover business rules, invalid requests, state changes, and the main user flow.</p>
+            <h3>Automated testing</h3>
+            <p>Unit tests check the release rules, API tests check the server responses, and browser tests check the main user workflow.</p>
             <code>unit → API → UI</code>
           </article>
           <article>
             <span class="skill-number">04</span>
             <h3>CI/CD pipeline</h3>
-            <p>GitHub Actions runs the full suite and publishes the site only when the quality checks succeed.</p>
+            <p>GitHub Actions runs the tests after each code change and publishes the website only when they pass.</p>
             <code>test → report → deploy</code>
           </article>
         </div>
