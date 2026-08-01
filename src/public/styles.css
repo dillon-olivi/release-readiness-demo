@@ -217,12 +217,12 @@ footer p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
-  
 }
+
 .flow-groups {
   display: grid;
   gap: 2.5rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .flow-group {
@@ -231,14 +231,15 @@ footer p { margin: 0; }
 }
 
 .flow-group h3 {
-  margin: 0;
+  width: min(760px, 100%);
+  margin: 0 auto;
 }
 
 .flow-group .flow {
-  margin-top: 0;
+  width: min(760px, 100%);
+  margin: 0 auto;
 }
 
 .flow-group .flow + .flow {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
-
