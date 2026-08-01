@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive SDET portfolio project demonstrating release gates, API testing, browser automation, and CI/CD."
+    />
+    <title>Release Readiness Dashboard | SDET Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <nav class="topbar" aria-label="Portfolio navigation">
+      <a class="brand" href="#top" aria-label="Release Readiness home">
+        <span class="brand-mark">RR</span>
+        <span>Release Readiness</span>
+      </a>
+      <div class="nav-links">
+        <a href="./test-report/" data-testid="report-link">Test report</a>
+        <a href="#architecture">Architecture</a>
+        <a id="source-link" href="#" target="_blank" rel="noreferrer">View source ↗</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <div class="badges" aria-label="Project highlights">
+            <span class="badge badge-live"><span class="pulse"></span> Live demo</span>
+            <span class="badge">Playwright</span>
+            <span class="badge">REST API</span>
+            <span class="badge">GitHub Actions</span>
+          </div>
+          <p class="eyebrow">SDET + SOFTWARE ENGINEERING PORTFOLIO</p>
+          <h1>Can this release ship?</h1>
+          <p class="hero-subtitle">
+            An interactive quality gate that combines product rules, test automation,
+            API validation, and CI/CD into one recruiter-friendly project.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#demo">Try the live demo</a>
+            <a class="button button-secondary" href="./test-report/">See automated tests</a>
+          </div>
+          <p class="microcopy">No download, account, or local setup required.</p>
+        </div>
+
+        <aside class="terminal" aria-label="Continuous integration summary">
+          <div class="terminal-header">
+            <span></span><span></span><span></span>
+            <strong>quality-and-pages.yml</strong>
+          </div>
+          <div class="terminal-body">
+            <p><span class="check">✓</span> Unit tests <strong>3 passed</strong></p>
+            <p><span class="check">✓</span> API tests <strong>3 passed</strong></p>
+            <p><span class="check">✓</span> UI tests <strong>2 passed</strong></p>
+            <p><span class="check">✓</span> Playwright report <strong>published</strong></p>
+            <p><span class="check">✓</span> GitHub Pages <strong>deployed</strong></p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="demo" class="demo-section shell" aria-labelledby="demo-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INTERACTIVE RELEASE GATE</p>
+            <h2 id="demo-title">Release 2.4.0</h2>
+          </div>
+          <div id="status-pill" class="status-pill status-blocked" aria-live="polite">
+            <span class="status-dot"></span>
+            <span id="status" data-testid="status">BLOCKED</span>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dashboard-main">
+            <div class="metrics" aria-label="Release quality metrics">
+              <article class="metric-card">
+                <span class="metric-label">Pass rate</span>
+                <strong id="pass-rate" data-testid="pass-rate">89%</strong>
+                <small>Minimum: 90%</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-label">Failed tests</span>
+                <strong id="failed-tests" data-testid="failed-tests">1</strong>
+                <small>Required: 0</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-label">Critical bugs</span>
+                <strong id="critical-bugs" data-testid="critical-bugs">1</strong>
+                <small>Required: 0</small>
+              </article>
+            </div>
+
+            <div class="action-panel">
+              <div class="action-copy">
+                <h3>Resolve the release blockers</h3>
+                <p>Run the smoke suite, resolve the critical defect, and watch the gate recalculate.</p>
+              </div>
+              <div class="actions" aria-label="Demo actions">
+                <button id="run-smoke" class="button button-primary" type="button">
+                  <span aria-hidden="true">▶</span> Run smoke suite
+                </button>
+                <button id="resolve-bug" class="button button-dark" type="button">
+                  <span aria-hidden="true">✓</span> Resolve critical bug
+                </button>
+                <button id="reset" class="button button-quiet" type="button">Reset demo</button>
+              </div>
+              <p id="message" class="message" data-testid="message" aria-live="polite">
+                Two blockers prevent this release from shipping.
+              </p>
+            </div>
+          </div>
+
+          <aside class="gate-card" aria-label="Quality gate checks">
+            <div class="gate-header">
+              <h3>Quality gates</h3>
+              <span id="gate-count">0 / 3 passing</span>
+            </div>
+            <ul class="gate-list">
+              <li id="gate-pass-rate">
+                <span class="gate-icon">×</span>
+                <div><strong>Pass rate ≥ 90%</strong><small>Currently 89%</small></div>
+              </li>
+              <li id="gate-failed-tests">
+                <span class="gate-icon">×</span>
+                <div><strong>Zero failed tests</strong><small>Currently 1 failure</small></div>
+              </li>
+              <li id="gate-critical-bugs">
+                <span class="gate-icon">×</span>
+                <div><strong>Zero critical bugs</strong><small>Currently 1 open</small></div>
+              </li>
+            </ul>
+            <div class="decision-box">
+              <span>Release decision</span>
+              <strong id="decision-detail">DO NOT DEPLOY</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="architecture" class="architecture-section shell" aria-labelledby="architecture-title">
+        <div class="section-heading centered">
+          <div>
+            <p class="eyebrow">WHAT THIS PROJECT DEMONSTRATES</p>
+            <h2 id="architecture-title">Built beyond the happy path</h2>
+            <p class="section-subtitle">
+              The live interface is only the front door. The repository contains testable business
+              logic, a working REST API, layered automation, and a deployment pipeline.
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-grid">
+          <article>
+            <span class="skill-number">01</span>
+            <h3>Product logic</h3>
+            <p>Explicit, reusable release rules calculate pass rate and deployment readiness.</p>
+            <code>calculateReleaseSummary()</code>
+          </article>
+          <article>
+            <span class="skill-number">02</span>
+            <h3>REST API</h3>
+            <p>Node.js endpoints cover release state, test results, validation, and reset behavior.</p>
+            <code>GET /api/release</code>
+          </article>
+          <article>
+            <span class="skill-number">03</span>
+            <h3>Layered testing</h3>
+            <p>Fast unit tests, API contract checks, negative cases, and critical UI workflows.</p>
+            <code>unit → API → UI</code>
+          </article>
+          <article>
+            <span class="skill-number">04</span>
+            <h3>CI/CD</h3>
+            <p>Every push runs automation, publishes the HTML report, and deploys only after success.</p>
+            <code>GitHub Actions</code>
+          </article>
+        </div>
+
+        <div class="flow" aria-label="Project architecture flow">
+          <div><strong>Browser UI</strong><span>Interactive workflow</span></div>
+          <span class="flow-arrow">→</span>
+          <div><strong>Shared rules</strong><span>Release decisions</span></div>
+          <span class="flow-arrow">→</span>
+          <div><strong>REST API</strong><span>State + validation</span></div>
+          <span class="flow-arrow">→</span>
+          <div><strong>Playwright</strong><span>Automated evidence</span></div>
+        </div>
+      </section>
+
+      <section class="cta shell">
+        <div>
+          <p class="eyebrow">RECRUITER / HIRING MANAGER</p>
+          <h2>Review the evidence, not a setup guide.</h2>
+          <p>The live demo and test report work in your browser. Source code remains available for deeper review.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="button button-primary" href="./test-report/">Open test report</a>
+          <a id="source-link-bottom" class="button button-secondary" href="#" target="_blank" rel="noreferrer">Browse source ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Release Readiness Dashboard · SDET portfolio project</p>
+      <p>Live demo uses the same shared quality-gate rules as the tested Node.js API.</p>
+    </footer>
+  </body>
+</html>
