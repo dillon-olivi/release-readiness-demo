@@ -1,9 +1,12 @@
 # Release Readiness Dashboard
 
 [![Quality Checks](https://github.com/dillon-olivi/release-readiness-demo/actions/workflows/quality-and-pages.yml/badge.svg)](https://github.com/dillon-olivi/release-readiness-demo/actions/workflows/quality-and-pages.yml)
+
 [![Live Demo](https://img.shields.io/badge/live_demo-open-6d8cff)](https://dillon-olivi.github.io/release-readiness-demo/)
 
-**[Open the live demo](https://dillon-olivi.github.io/release-readiness-demo/)** · **[View the automated test report](https://dillon-olivi.github.io/release-readiness-demo/test-report/)**
+**[Open the live demo](https://dillon-olivi.github.io/release-readiness-demo/)** 
+
+**[View the automated test report](https://dillon-olivi.github.io/release-readiness-demo/test-report/)**
 
 ![Release Readiness Dashboard](assets/dashboard-preview.png)
 
@@ -37,7 +40,7 @@ Shared release rules calculate READY or BLOCKED
         ↓
 The dashboard displays the updated decision
 ```
-###Test and deployment flow
+### Test and deployment flow
 ```text
 Code is pushed to GitHub
         ↓
@@ -50,7 +53,7 @@ A Playwright test report is generated
 The live demo deploys only if the tests pass
 ```
 
-The browser demo and Node.js API both use `calculateReleaseSummary()` from `src/public/release-logic.js`. Keeping the release rules separate from the UI and server makes the behavior easier to test and avoids duplicating business logic.
+The browser dashboard and Node.js API both use `calculateReleaseSummary()` from `src/public/release-logic.js`. Keeping the release rules separate from the UI and server makes the behavior easier to test and avoids duplicating business logic.
 
 ## Test coverage
 
@@ -77,6 +80,9 @@ Local setup is optional because the demo and test report are already published.
 npm install
 npx playwright install chromium
 npm test
+```
+### To run the application
+```bash
 npm start
 ```
 
